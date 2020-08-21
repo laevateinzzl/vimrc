@@ -51,6 +51,11 @@ Plug 'jelera/vim-javascript-syntax'
 
 Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'preservim/nerdcommenter'
+
+Plug 'skywind3000/asynctasks.vim'
+
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 
@@ -350,4 +355,13 @@ if (empty($TMUX))
   endif
 endif
 set background=dark " for the dark version
+
+let g:asyncrun_open = 6
+
+noremap <silent><f5> :AsyncTask file-run<cr>
+noremap <silent><f9> :AsyncTask file-build<cr>
+
+let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg']
+
+noremap <silent><f6> :AsyncTask project-run<cr>
 
