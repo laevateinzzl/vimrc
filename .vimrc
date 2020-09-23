@@ -7,7 +7,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'honza/vim-snippets'
 
@@ -56,6 +58,16 @@ Plug 'preservim/nerdcommenter'
 Plug 'skywind3000/asynctasks.vim'
 
 Plug 'skywind3000/asyncrun.vim'
+
+Plug 'tpope/vim-surround'
+
+Plug 'tpope/vim-commentary'
+
+Plug 'tpope/vim-speeddating'
+
+Plug 'tpope/vim-repeat'
+
+
 call plug#end()
 
 
@@ -358,10 +370,15 @@ set background=dark " for the dark version
 
 let g:asyncrun_open = 6
 
-noremap <silent><f5> :AsyncTask file-run<cr>
+noremap <silent><f5> :AsyncTask project-backend-run<cr>
+noremap <silent><f6> :AsyncStop <cr>
 noremap <silent><f9> :AsyncTask file-build<cr>
 
 let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg']
 
-noremap <silent><f6> :AsyncTask project-run<cr>
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+
+nmap [c <Plug>GitGutterPrevHunk
+nmap ]c <Plug>GitGutterNextHunk
 
